@@ -1,0 +1,9 @@
+# Simple docker image for php testing
+
+## What is included?
+- PHP 7.4 CLI
+- Additional php extensions: bcmath, pcntl, pdo, pdo_pgsql, zip exif
+- Composer
+
+## Usage
+- `PHP 7.4` should use tag `1`
