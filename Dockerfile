@@ -2,11 +2,12 @@ FROM php:7.4-cli
 MAINTAINER "Jordan Kniest <mail@jkniest.de>"
 
 # Install additional php extensions
-RUN apt update && \
-	apt install git zip libzip-dev zlib1g-dev libpq-dev libicu-dev jq libmagickwand-dev -y && \
-	docker-php-ext-install bcmath pcntl pdo pdo_pgsql zip exif intl && \
-	pecl install pcov imagick && \
-	docker-php-ext-enable pcov imagick
+RUN apt update \
+	&& apt install git zip libzip-dev zlib1g-dev libpq-dev libicu-dev jq libmagickwand-dev libjpeg-dev libfreetype6-dev -y \
+	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+	&& docker-php-ext-install bcmath pcntl pdo pdo_pgsql zip exif intl gd \
+	&& pecl install pcov imagick \
+	&& docker-php-ext-enable pcov imagick
 
 # Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
