@@ -10,9 +10,5 @@ RUN apt update \
 	&& docker-php-ext-enable pcov imagick
 
 # Install composer
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-	php composer-setup.php && \
-	php -r "unlink('composer-setup.php');" && \
-	mv composer.phar /usr/local/bin/composer && \
-	chmod +x /usr/local/bin/composer
-
+RUN curl https://getcomposer.org/download/2.0.0-RC1/composer.phar -o /usr/local/bin/composer \
+	&& chmod +x /usr/local/bin/composer
