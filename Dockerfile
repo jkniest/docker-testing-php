@@ -15,4 +15,3 @@ RUN curl https://getcomposer.org/download/2.0.8/composer.phar -o /usr/local/bin/
 
 # Set memory limit to unlimited
 RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
->>>>>>> Set memory limit to -1
