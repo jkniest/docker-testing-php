@@ -10,5 +10,9 @@ RUN apt update \
 	&& docker-php-ext-enable pcov imagick
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.0.0-RC1/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.0.8/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer
+
+# Set memory limit to unlimited
+RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
+>>>>>>> Set memory limit to -1
