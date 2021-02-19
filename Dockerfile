@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:8.0-cli
 MAINTAINER "Jordan Kniest <mail@jkniest.de>"
 
 # Install additional php extensions
@@ -10,7 +10,7 @@ RUN apt update \
 	&& docker-php-ext-enable pcov imagick
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.0.8/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.0.9/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer
 
 # Set memory limit to unlimited
