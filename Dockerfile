@@ -5,7 +5,7 @@ MAINTAINER "Jordan Kniest <mail@jkniest.de>"
 RUN apt update \
 	&& apt install git zip libzip-dev zlib1g-dev libpq-dev libicu-dev jq libmagickwand-dev libjpeg-dev libfreetype6-dev -y \
 	&& docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ \
-	&& docker-php-ext-install bcmath pcntl pdo pdo_pgsql zip exif intl gd
+	&& docker-php-ext-install bcmath pcntl pdo pdo_pgsql zip exif intl gd \
 	&& pecl install pcov \
 	&& docker-php-ext-enable pcov
 
