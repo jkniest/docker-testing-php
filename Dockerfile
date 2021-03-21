@@ -16,7 +16,7 @@ RUN mkdir -p /usr/src/php/ext/imagick; \
     docker-php-ext-install imagick;
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.0.9/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.0.11/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer
 
 # Set memory limit to unlimited
