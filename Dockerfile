@@ -11,6 +11,7 @@ RUN apt update \
 
 # install imagick
 # Version is not officially released https://pecl.php.net/get/imagick but following works for PHP 8
+# See https://pecl.php.net/package-stats.php?pid=76&rid=&cid=12
 RUN mkdir -p /usr/src/php/ext/imagick; \
     curl -fsSL https://github.com/Imagick/imagick/archive/06116aa24b76edaf6b1693198f79e6c295eda8a9.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1; \
     docker-php-ext-install imagick;
