@@ -17,3 +17,16 @@ steps:
       event:
         exclude:
           - "tag"
+
+  - name: "Release docker images"
+    image: "plugins/docker"
+    settings:
+      repo: "jkniest/docker-testing-php"
+      auto_tag: true
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+    when:
+      event:
+          - "tag"
