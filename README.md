@@ -6,6 +6,7 @@ This is meant to be used with DroneCI.
 - PHP 8.0 CLI
 - Additional php extensions: bcmath, pcntl, pdo, pdo_pgsql, zip exif, intl, pcov, imagick, gd
 - Composer
+- Forge CLI
 
 ## Usage
 - `PHP 8` should use tag `2`
