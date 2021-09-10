@@ -17,8 +17,17 @@ RUN mkdir -p /usr/src/php/ext/imagick; \
     docker-php-ext-install imagick;
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.1.3/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.1.6/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer
 
 # Set memory limit to unlimited
 RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
+
+# Install forge CLI
+RUN composer global require laravel/forge-cli \
+    && mkdir -p /root/.laravel-forge \
+    && mkdir -p /root/.ssh \
+    && echo "Host *" >> /root/.ssh/config \
+    && echo "    StrictHostKeyChecking no" >> /root/.ssh/config
+
+ENV PATH="/root/.composer/vendor/bin:${PATH}"
