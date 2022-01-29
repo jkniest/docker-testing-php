@@ -11,7 +11,8 @@ RUN apt update \
 
 # Install composer
 RUN curl https://getcomposer.org/download/2.2.5/composer.phar -o /usr/local/bin/composer \
-	&& chmod +x /usr/local/bin/composer
+	&& chmod +x /usr/local/bin/composer \
+    && composer self-update
 
 # Set memory limit to unlimited
 RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
