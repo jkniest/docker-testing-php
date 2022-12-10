@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.2-cli
 MAINTAINER "Jordan Kniest <mail@jkniest.de>"
 
 # Install additional php extensions
@@ -10,7 +10,7 @@ RUN apt update \
 	&& docker-php-ext-enable pcov imagick
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.2.5/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.4.4/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer \
     && composer self-update
 
