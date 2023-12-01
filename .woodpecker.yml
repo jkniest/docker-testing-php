@@ -1,0 +1,18 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git:2.0
+    settings:
+      home: /root
+
+pipeline:
+    Build docker image:
+      image: "plugins/docker"
+      settings:
+        repo: "jkniest/docker-testing-php"
+        tags: latest
+        username:
+          from_secret: DOCKER_USERNAME
+        password:
+          from_secret: DOCKER_PASSWORD
+      when:
+        - event: push
