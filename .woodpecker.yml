@@ -1,5 +1,5 @@
 steps:
-    Build docker image:
+    build docker image:
       image: "plugins/docker"
       settings:
         repo: "jkniest/docker-testing-php"
@@ -10,3 +10,15 @@ steps:
           from_secret: DOCKER_PASSWORD
       when:
         - event: push
+
+    release docker image:
+      image: "plugins/docker"
+      settings:
+        repo: "jkniest/docker-testing-php"
+        auto_tag: true
+        username:
+          from_secret: DOCKER_USERNAME
+        password:
+          from_secret: DOCKER_PASSWORD
+      when:
+        - event: tag
