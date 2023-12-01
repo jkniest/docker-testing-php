@@ -4,9 +4,9 @@ This is meant to be used with DroneCI.
 
 ## What is included?
 - PHP 8.2 CLI
-- Additional php extensions: bcmath, pcntl, pdo, pdo_pgsql, zip exif, intl, pcov, imagick, gd
+- Additional php extensions: bcmath, pcntl, pdo, pdo_pgsql, zip exif, intl, pcov, gd, ~imagick~ (removed in V5)
 - Composer
-- Forge CLI
+- ~Forge CLI~ (removed in V5)
 
 ## Usage
 - `PHP 8.2` should use tag `4`
