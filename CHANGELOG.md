@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.0] - 2024-12-24
+- Updated php to version 8.4
+- Updated composer to version 2.8.4
+- Switch from Dronepecker to Github Actions Build
+
 ## [5.0.0] - 2023-12-01
 - Updated php to version 8.3
 - Updated composer to version 2.6.5
@@ -75,6 +80,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 1.0.0 -- 2020-02-16
 - Added initial docker image with php 7.4 and composer
 
+[6.0.0]: https://github.com/jkniest/docker-testing-php/compare/5.0.0...6.0.0
 [5.0.0]: https://github.com/jkniest/docker-testing-php/compare/4.0.0...5.0.0
 [4.0.0]: https://github.com/jkniest/docker-testing-php/compare/3.1.0...4.0.0
 [3.1.0]: https://github.com/jkniest/docker-testing-php/compare/3.0.1...3.1.0
