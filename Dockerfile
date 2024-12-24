@@ -1,4 +1,4 @@
-FROM php:8.3-cli
+FROM php:8.4-cli
 LABEL MAINTAINER="Jordan Kniest <mail@jkniest.de>"
 
 # Install additional php extensions
@@ -10,7 +10,7 @@ RUN apt update \
 	&& docker-php-ext-enable pcov
 
 # Install composer
-RUN curl https://getcomposer.org/download/2.6.5/composer.phar -o /usr/local/bin/composer \
+RUN curl https://getcomposer.org/download/2.8.4/composer.phar -o /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer \
     && composer self-update
 
