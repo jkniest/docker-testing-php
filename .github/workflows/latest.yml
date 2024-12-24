@@ -1,9 +1,6 @@
 name: Build latest
 
-on:
-  push:
-    branches:
-      - "*"
+on: [push]
 
 jobs:
   build:
